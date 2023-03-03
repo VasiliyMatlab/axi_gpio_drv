@@ -13,7 +13,6 @@
 
 #include <inttypes.h>
 
-#define __unused __attribute__((unused))		///< Аттрибут неиспользования
 #define __packed __attribute__((packed))		///< Аттрибут упаковки памяти
 #define __align(x) __attribute__((aligned(x)))	///< Выравнивание на x байт
 #define alen(x) (sizeof(x) / sizeof((x)[0]))	///< Длина данных в составных частях

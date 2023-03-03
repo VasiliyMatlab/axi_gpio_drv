@@ -18,8 +18,8 @@ int32_t axi_gpio_init(axi_gpio_t *dev, uint32_t baseaddr) {
     }
     
     // Выставление адресов
-    dev->regs           = (axi_gpio_regs_t *) (baseaddr + AXI_GPIO_REGISTER_OFFSET);
-    dev->intrpt_regs    = (axi_gpio_intrpt_regs_t *) (baseaddr + AXI_GPIO_INTERRUPT_REGISTER_OFFSET);
+    dev->regs        = (axi_gpio_regs_t *) (intptr_t) (baseaddr + AXI_GPIO_REGISTER_OFFSET);
+    dev->intrpt_regs = (axi_gpio_intrpt_regs_t *) (intptr_t) (baseaddr + AXI_GPIO_INTERRUPT_REGISTER_OFFSET);
 
     // Инициализация регистров
     dev->axi_gpio_current_data  = 0;
