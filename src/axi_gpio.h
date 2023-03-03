@@ -13,7 +13,7 @@
 
 #include <stdint.h>
 
-/// AXI GPIO FLAGS
+// AXI GPIO FLAGS
 #define AXI_GPIO_GLOBAL_INTERRUPT_ENABLE        0x80000000  ///< Enable interrupt
 #define AXI_GPIO_CHANNEL_1_INTERRUPT_ENABLE     0x00000001  ///< Enable channel 1 interrupt
 #define AXI_GPIO_CHANNEL_2_INTERRUPT_ENABLE     0x00000002  ///< Enable channel 2 interrupt
