@@ -13,7 +13,6 @@
 
 #include <inttypes.h>
 
-#define __packed __attribute__((packed))		///< Аттрибут упаковки памяти
 #define __align(x) __attribute__((aligned(x)))	///< Выравнивание на x байт
 #define alen(x) (sizeof(x) / sizeof((x)[0]))	///< Длина данных в составных частях
 
@@ -24,7 +23,6 @@
  * \param[in] data 4 байта данных
  */
 __inline__ static void mwr(uint32_t volatile *addr, uint32_t data) {
-	// __asm__ __volatile__ ("mbar 0");
 	*(volatile uint32_t* volatile)(addr) = (data);
 }
 
@@ -36,9 +34,7 @@ __inline__ static void mwr(uint32_t volatile *addr, uint32_t data) {
  */
 __inline__ static uint32_t mrd(const uint32_t volatile *addr) {
 	uint32_t ret;
-	// __asm__ __volatile__ ("mbar 0");
 	ret = (*(volatile uint32_t* volatile)(addr));
-	// __asm__ __volatile__ ("mbar 0");
 	return ret;
 }
 

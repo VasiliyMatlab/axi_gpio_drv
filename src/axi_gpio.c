@@ -1,8 +1,8 @@
 /*
  * file:        axi_gpio.c
  * author:      VasiliyMatlab
- * version:     1.0
- * date:        01.03.2022
+ * version:     1.1
+ * date:        03.03.2022
  * copyright:   Vasiliy (c) 2023
  */
 
@@ -44,8 +44,14 @@ int32_t axi_gpio_init(axi_gpio_t *dev, uint32_t baseaddr) {
 }
 
 // Write to AXI GPIO
-void axi_gpio_write(axi_gpio_t *dev, uint32_t data) {
+void axi_gpio_write(axi_gpio_t *dev, const uint32_t data) {
+    mwr(&dev->axi_gpio2_current_data, data);
     mwr(&dev->regs->gpio2_data, data);
+}
+
+// Read from AXI GPIO
+uint32_t axi_gpio_read(axi_gpio_t *dev) {
+    return mrd(&dev->axi_gpio_current_data);
 }
 
 // Interrupt handler for AXI GPIO

@@ -2,9 +2,9 @@
  * \file axi_gpio.h
  * \author VasiliyMatlab
  * \brief GPIO Registers module
- * \version 1.0
- * \date 01.03.2023
- * \copyright Vasiliy (c) 2022
+ * \version 1.1
+ * \date 03.03.2023
+ * \copyright Vasiliy (c) 2023
  */
 
 #ifndef __AXI_GPIO_H__
@@ -70,15 +70,23 @@ int32_t axi_gpio_init(axi_gpio_t *dev, uint32_t baseaddr);
 /**
  * \brief Запись в GPIO
  * 
- * \param[in] dev Указатель на дескриптор GPIO
+ * \param[in,out] dev Указатель на дескриптор GPIO
  * \param[in] data Данные для записи в GPIO
  */
-void axi_gpio_write(axi_gpio_t *dev, uint32_t data);
+void axi_gpio_write(axi_gpio_t *dev, const uint32_t data);
+
+/**
+ * \brief Чтение из GPIO
+ * 
+ * \param[in] dev Указатель на дескриптор GPIO
+ * \return Прочитанное значение
+ */
+uint32_t axi_gpio_read(axi_gpio_t *dev);
 
 /**
  * \brief Обработчик прерываний GPIO
  * 
- * \param[in] dev Указатель на дескриптор GPIO
+ * \param[in,out] dev Указатель на дескриптор GPIO
  */
 void axi_gpio_intrpt_handler(void *dev);
 
