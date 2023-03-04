@@ -63,7 +63,7 @@ typedef struct axi_gpio {
  * 
  * \param[in,out] dev Указатель на дескриптор GPIO
  * \param[in] baseaddr Базовый адрес
- * \return RETURN_SUCCESS; или RETURN_FAIL в случае ошибки
+ * \return 0; или -1 в случае ошибки
  */
 int32_t axi_gpio_init(axi_gpio_t *dev, uint32_t baseaddr);
 
